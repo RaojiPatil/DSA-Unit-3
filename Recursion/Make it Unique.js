@@ -2,16 +2,6 @@ function runProgram(input) {
     var str = input.split("");
 
 
-    var n = str.length;
-    var out = "";
-    var s = new Set();
-    for (var i = 0; i < n; i++)
-        s.add(str[i]);
-    for (const v of s) {
-        out = out + v + "";
-    }
-    console.log(out.trim());
-
 }
 
 
