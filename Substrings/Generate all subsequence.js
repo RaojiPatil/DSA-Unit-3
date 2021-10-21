@@ -1,18 +1,3 @@
-// var str = "abcd"
-
-// for (var i = 0; i < str.length; i++) {
-//     var out = ""
-//     for (var j = i; j < str.length; j++) {
-//         out = out + str[j];
-//         console.log(out);
-
-//     }
-// }
-
-
-//
-
-
 function runProgram(input) {
     var input = input.split("\n");
     var n = +input[0];
@@ -53,3 +38,6 @@ if (process.env.USERNAME === "Admin") {
         process.exit(0);
     });
 }
+
+
+//

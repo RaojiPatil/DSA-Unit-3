@@ -7,17 +7,7 @@ function powerOf(x, y) {
 
     if (y == 0)
         return 1;
-
-    var out = powerOf(x, (y / 2));
-
-    if (y % 2 == 0)
-        return out * out;
-    else {
-        if (y > 0)
-            return x * out * out;
-        else
-            return (out * out) / x;
-    }
+    return x * powerOf(x, y - 1);
 }
 
 if (process.env.USERNAME === "Admin") {
@@ -40,3 +30,16 @@ if (process.env.USERNAME === "Admin") {
         process.exit(0);
     });
 }
+
+
+// Driver Code
+
+let x = 2;
+let y = 4;
+
+function power(x, y) {
+
+    return parseInt(Math.pow(x, y));
+}
+
+console.log(power(x, y));

@@ -1,23 +1,9 @@
+let x = 2;
+let y = 4;
 
+function power(x, y) {
 
-var a = "";
-
-function findUnique(str) {
-
-    var out = "";
-
-    for (var i = 0; i < str.length; i++) {
-        if (out.includes(str[i]) === false) {
-            out += str[i]
-        } else if (out.includes(str[i]) === " ") {
-            out += "";
-        }
-    }
-    return out;
-}
-(findUnique("my name is ankush"))
-if (out = " ") {
-    a = a + out;
+    return parseInt(Math.pow(x, y));
 }
 
-console.log(a);
+console.log(power(x, y));

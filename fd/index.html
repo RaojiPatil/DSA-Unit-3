@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Add Product</h1>
+
+    <input type="text" id="id" placeholder="id">
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="price" placeholder="price">
+    <button onclick="addProduct()"> addProduct</button>
+</body>
+
+</html>
+
+<script>
+    async function addProduct() {
+
+        let data = {
+            id: document.getElementById("id").value,
+            name: document.getElementById("name").value,
+            price: document.getElementById("price").value
+
+        };
+        let response = await fetch("http://localhost:5000/api/products")
+
+        method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+
+                "Con"
+            }
+
+    }
+</script>
