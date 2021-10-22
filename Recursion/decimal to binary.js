@@ -1,26 +1,27 @@
 function runProgram(input) {
-    var n = Number(input)
+    var input = input.split("\n");
 
+    var size = +input[0]
+    var line = 1;
 
-
-    function f(n) {
-
-        if (n == 0 || n == 1)
-            return 1;
-
-        else
-            return n * f(n - 1);
-
+    for (var i = 0; i < size; i++) {
+        var n = input[line++].split(" ").map(Number)
+        console.log(find(n));
     }
 
-    console.log(f(n));
+
+    function find(n) {
+        if (n == 0)
+            return 0;
+        else
+            return ((n % 2) + 10 * find(parseInt(n / 2)));
+    }
 
 
 }
 
-
 if (process.env.USERNAME === "Admin") {
-    runProgram(5);
+    runProgram('2\n15\n1281');
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
