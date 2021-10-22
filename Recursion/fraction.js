@@ -3,24 +3,31 @@ function runProgram(input) {
 
 
 
+    // function f(n) {
+
+    //     if (n == 0 || n == 1)
+    //         return 1;
+
+    //     else
+    //         return n * f(n - 1);
+
+    // }
+
+    // console.log(f(n));
+
+    //2
+
     function f(n) {
-
-        if (n == 0 || n == 1)
-            return 1;
-
-        else
-            return n * f(n - 1);
-
+        if (n == 1)
+            return 0;
+        return Math.log(n) + f(n - 1);
     }
-
-    console.log(f(n));
-
-
+    console.log(f(n).toFixed(4));
 }
 
 
 if (process.env.USERNAME === "Admin") {
-    runProgram(5);
+    runProgram(3);
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
