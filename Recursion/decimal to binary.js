@@ -6,22 +6,26 @@ function runProgram(input) {
 
     for (var i = 0; i < size; i++) {
         var n = input[line++].split(" ").map(Number)
-        console.log(find(n));
+        console.log(toBinary(n));
+    }
+
+    function toBinary(n) {
+        if (n === 1) {
+            return '1';
+        }
+        if (n === 0) {
+            return '0';
+        }
+        return toBinary(Math.floor(n / 2)) + (n % 2);
     }
 
 
-    function find(n) {
-        if (n == 0)
-            return 0;
-        else
-            return ((n % 2) + 10 * find(parseInt(n / 2)));
-    }
 
 
 }
 
 if (process.env.USERNAME === "Admin") {
-    runProgram('2\n15\n1281');
+    runProgram('2\n15\n128');
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
@@ -40,3 +44,26 @@ if (process.env.USERNAME === "Admin") {
         process.exit(0);
     });
 }
+
+//
+
+var a = 1001;
+var b = parseInt(a, 2);
+console.log(b);
+
+//
+
+var n = 7;
+
+function toBinary(n) {
+    if (n === 1) {
+        return '1';
+    }
+    if (n === 0) {
+        return '0';
+    }
+    return toBinary(Math.floor(n / 2)) + (n % 2);
+}
+console.log(toBinary(n));
+
+//

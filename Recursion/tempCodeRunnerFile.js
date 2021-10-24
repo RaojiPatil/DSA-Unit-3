@@ -1,21 +1,31 @@
 function runProgram(input) {
     var input = input.split("\n");
 
-    var n = +input[0]
+    var size = +input[0]
+    var line = 1;
 
-    function fib(n) {
-        if (n <= 1)
-            return n;
-        return fib(n - 1) + fib(n - 2);
+    for (var i = 0; i < size; i++) {
+        var n = input[line++].split(" ").map(Number)
+        console.log(toBinary(n));
     }
 
-    console.log(fib(n))
+    function toBinary(n) {
+        if (n === 1) {
+            return '1';
+        }
+        if (n === 0) {
+            return '0';
+        }
+        return toBinary(Math.floor(n / 2)) + (n % 2);
+    }
+
+
 
 
 }
 
 if (process.env.USERNAME === "Admin") {
-    runProgram('4');
+    runProgram('2\n15\n128');
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
