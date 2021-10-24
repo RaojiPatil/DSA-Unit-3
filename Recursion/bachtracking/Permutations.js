@@ -14,12 +14,11 @@ function permute(str, l, r) {
     }
 }
 
-function swap(a, i, j) {
-    let temp;
-    let charArray = a;
-    temp = charArray[i];
-    charArray[i] = charArray[j];
-    charArray[j] = temp;
 
-    return (charArray);
+function swap(a, i, j) {
+
+    let temp = a[i]
+    a[i] = a[j]
+    a[j] = temp;
+    return a;
 }
