@@ -10,6 +10,17 @@ function runProgram(input) {
 
     }
 
+    var n = 4;
+    var count = 0;
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < n; j++) {
+            if (i + j == n) {
+                count++;
+            }
+        }
+
+    }
+    console.log(allsum(count));
 
 
 }
@@ -34,16 +45,3 @@ if (process.env.USERNAME === "Admin") {
         process.exit(0);
     });
 }
-
-
-var n = 4;
-var count = 0;
-for (var i = 0; i < n; i++) {
-    for (var j = 0; j < n; j++) {
-        if (i + j == n) {
-            count++;
-        }
-    }
-
-}
-console.log(count);
