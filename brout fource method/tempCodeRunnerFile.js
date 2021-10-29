@@ -1,22 +1,28 @@
-
 function runProgram(input) {
-    var input = input.trim().split("\n");
+    var input = input.split("\n");
 
-    var text = +input[0];
+    var size = +input[0];
     var line = 1;
-    for (var i = 0; i <= text; i++) {
-        var n = input[line++];
-        var array = input[line++].split(" ").map(Number);
-        console.log(array);
+    var arr = input[line++].split(" ").map(Number);
 
 
+    var n = arr.length;
+
+    for (var i = 0; i < n; i++) {
+        for (var j = 0; j < (n - i - 1); j++) {
+            if (arr[j] > arr[j + 1]) {
+                var tmp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+            }
+        }
     }
+    console.log(arr.join(" "));
+
 }
 
-
-
 if (process.env.USERNAME === "Admin") {
-    runProgram('3\n3\n1 2 3\n4\n0 1 2 3\n2 3 6 10');
+    runProgram('5\n4 3 6 0 8');
 } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");
