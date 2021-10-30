@@ -1,4 +1,3 @@
-
 var arr = [1, 2, 3];
 var k = 3;
 var count = 0;
