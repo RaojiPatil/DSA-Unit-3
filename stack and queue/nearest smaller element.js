@@ -101,3 +101,30 @@ if (process.env.USERNAME === "Admin") {
         process.exit(0);
     });
 }
+
+
+//
+
+
+var arr = [39, 27, 11, 4, 24, 32, 32, 1];
+var n = arr.length;
+var a = [];
+
+function printNSE(arr, n) {
+    var next, i, j;
+    for (i = 0; i < n; i++) {
+        next = -1;
+        for (j = 0; j < n; j++) {
+            if (arr[i] > arr[j]) {
+                next = arr[j];
+                break;
+            }
+        }
+        a.push(next);
+    }
+    console.log(a.join(" "));
+}
+
+
+
+printNSE(arr, n);

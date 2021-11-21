@@ -61,7 +61,7 @@ function twice(arr, arr_size) {
 }
 
 
-console.log(twice(arrr, n));
+console.log(twice(arr, n));
 
 //
 
